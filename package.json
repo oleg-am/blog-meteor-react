@@ -1,0 +1,59 @@
+{
+  "name": "blog-meteor-react",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "lint": "eslint .",
+    "pretest": "npm run lint --silent"
+  },
+  "devDependencies": {
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-import-resolver-meteor": "^0.2.4",
+    "eslint-plugin-import": "^1.10.0",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-meteor": "^3.6.0",
+    "eslint-plugin-react": "^5.2.2",
+    "faker": "^3.1.0"
+  },
+  "eslintConfig": {
+    "plugins": [
+      "meteor",
+      "react"
+    ],
+    "extends": [
+      "airbnb",
+      "plugin:meteor/recommended"
+    ],
+    "globals": {
+      "server": false,
+      "browser": false,
+      "expect": false
+    },
+
+    "settings": {
+      "import/resolver": "meteor"
+    },
+    "rules": {
+      "import/no-unresolved": 0,
+      "no-underscore-dangle": [
+        "error",
+        {
+          "allow": [
+            "_id",
+            "_ensureIndex",
+            "_verifyEmailToken",
+            "_resetPasswordToken",
+            "_name"
+          ]
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.1.0",
+    "react-addons-pure-render-mixin": "^15.1.0",
+    "react-dom": "^15.1.0"
+  }
+}
